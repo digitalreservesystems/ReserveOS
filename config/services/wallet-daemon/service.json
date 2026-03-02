@@ -1,0 +1,20 @@
+{
+  "rpc": {
+    "bind": "127.0.0.1",
+    "port": 9011
+  },
+  "storage": {
+    "base_url": "http://127.0.0.1:9101"
+  },
+  "node": {
+    "base_url": "http://127.0.0.1:18445"
+  },
+  "polling": {
+    "enabled": true,
+    "interval_seconds": 2
+  },
+  "keyvault": {
+    "path": "runtime/keyvault/keyvault.enc",
+    "kek_env": "RESERVEOS_KEYMASTER"
+  }
+}

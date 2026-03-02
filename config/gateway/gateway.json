@@ -1,0 +1,85 @@
+{
+  "gateway": {
+    "bind": "0.0.0.0",
+    "port": 8080
+  },
+  "web": {
+    "runtime_web_dir": "runtime/web",
+    "marketing": {
+      "name": "marketing",
+      "source_dir": "ui/marketing",
+      "entry": "index.html"
+    },
+    "portal": {
+      "name": "portal",
+      "source_dir": "ui/portal",
+      "entry": "index.html"
+    },
+    "wallet": {
+      "name": "wallet",
+      "source_dir": "ui/wallet",
+      "entry": "index.html"
+    }
+  },
+  "routes": [
+    {
+      "path_prefix": "/api",
+      "target": "http://127.0.0.1:18445"
+    },
+    {
+      "path_prefix": "/api/node",
+      "target": "http://127.0.0.1:18445"
+    },
+    {
+      "path_prefix": "/api/wallet",
+      "target": "http://127.0.0.1:9020"
+    },
+    {
+      "path_prefix": "/api/platformdb",
+      "target": "http://127.0.0.1:9030"
+    }
+  ],
+  "services": [
+    {
+      "name": "core-node",
+      "enabled": true,
+      "command": [
+        "go",
+        "run",
+        "./core/cmd/node",
+        "config/node/node.json"
+      ],
+      "workdir": "",
+      "env": {}
+    },
+    {
+      "name": "wallet-daemon",
+      "enabled": true,
+      "command": [
+        "go",
+        "run",
+        "./services/wallet-daemon",
+        "config/services/wallet-daemon/service.json"
+      ],
+      "workdir": "",
+      "env": {}
+    },
+    {
+      "name": "platformdb-daemon",
+      "enabled": true,
+      "command": [
+        "go",
+        "run",
+        "./services/platformdb-daemon",
+        "config/services/platformdb-daemon/service.json"
+      ],
+      "workdir": "",
+      "env": {}
+    }
+  ],
+  "tcp": {
+    "enabled": true,
+    "listen": "0.0.0.0:18444",
+    "target": "127.0.0.1:18444"
+  }
+}

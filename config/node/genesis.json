@@ -1,0 +1,36 @@
+{
+  "chain_id": "reservechain-devnet-1",
+  "network": "devnet",
+  "genesis_time_unix": 1761955200,
+  "protocol_version": 1,
+  "consensus": {
+    "pow_leading_zero_bits": 18
+  },
+  "allocations": [
+    {
+      "tag": "creator",
+      "address": "rc1creator000000000000000000000000000000",
+      "balance": "1000000000000"
+    },
+    {
+      "tag": "treasury",
+      "address": "rc1treasury000000000000000000000000000000",
+      "balance": "5000000000000"
+    }
+  ],
+  "params": {
+    "gas_asset": "USDR"
+  },
+  "finality": {
+    "checkpoint_interval": 20,
+    "threshold_num": 2,
+    "threshold_den": 3
+  },
+  "validators": [
+    {
+      "name": "local",
+      "pubkey_hex": "AUTO_FROM_KEYVAULT",
+      "weight": 100
+    }
+  ]
+}

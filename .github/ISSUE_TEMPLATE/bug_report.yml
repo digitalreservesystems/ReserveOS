@@ -1,0 +1,21 @@
+name: Bug report
+description: Report a bug in ReserveOS
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Include logs/configs (redact secrets).
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: e.g. v1.0.157

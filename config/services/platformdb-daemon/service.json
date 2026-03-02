@@ -1,0 +1,12 @@
+{
+  "rpc": {
+    "bind": "127.0.0.1",
+    "port": 9030
+  },
+  "db": {
+    "path": "runtime/platformdb/platform.db",
+    "mode": "sqlite",
+    "keyvault_path": "runtime/keyvault/keyvault.enc",
+    "keyvault_env": "RESERVEOS_KEYMASTER"
+  }
+}

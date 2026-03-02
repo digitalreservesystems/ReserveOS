@@ -1,0 +1,16 @@
+{
+  "fast-dev": {
+    "rotation_days": 1
+  },
+  "default": {
+    "rotation_days": 5
+  },
+  "paranoid": {
+    "rotation_days": 1,
+    "keep_old_keys": 5
+  },
+  "long-term": {
+    "rotation_days": 30,
+    "keep_old_keys": 10
+  }
+}

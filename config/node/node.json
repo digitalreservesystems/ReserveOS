@@ -1,0 +1,115 @@
+{
+  "node": {
+    "name": "reserveos-node",
+    "runtime_root": "runtime/core/node",
+    "log_file": "runtime/core/node/logs/node.log",
+    "role": "gateway",
+    "read_only": false,
+    "allow_public_submit": true
+  },
+  "storage": {
+    "leveldb_path": "runtime/core/node/db/leveldb"
+  },
+  "keyvault": {
+    "path": "runtime/keyvault/keyvault.enc",
+    "kek_env": "RESERVEOS_KEYMASTER",
+    "rotation_days": 5
+  },
+  "rpc": {
+    "bind": "127.0.0.1",
+    "port": 18445
+  },
+  "chain": {
+    "genesis_file": "config/node/genesis.json",
+    "genesis_hash": ""
+  },
+  "finality": {
+    "enabled": true,
+    "checkpoint_interval": 20,
+    "threshold_num": 2,
+    "threshold_den": 3,
+    "validators": [
+      {
+        "name": "local",
+        "pubkey_hex": "AUTO_FROM_KEYVAULT",
+        "weight": 100
+      }
+    ],
+    "gossip_interval_seconds": 3,
+    "peers": []
+  },
+  "sync": {
+    "enabled": true,
+    "peers": [],
+    "interval_seconds": 3,
+    "max_blocks_per_round": 50,
+    "workers": 2,
+    "max_inflight_blocks": 32,
+    "strict_linear": true,
+    "stage_candidates": true,
+    "max_queue_fill": 500,
+    "auto_converge": true,
+    "auto_converge_interval_sec": 3,
+    "inflight_timeout_sec": 10
+  },
+  "fees": {
+    "gas_asset": "USDR",
+    "base_fee_min": 100,
+    "per_byte": 2,
+    "otap_multiplier": 10,
+    "mode": "NORMAL"
+  },
+  "pop": {
+    "epoch_blocks": 50,
+    "min_payout": 100
+  },
+  "mempool": {
+    "max_txs": 5000,
+    "max_bytes": 8000000,
+    "tx_ttl_seconds": 1800,
+    "allow_future_nonces": true,
+    "max_nonce_gap": 50,
+    "rbf_min_fee_bump": 1.1,
+    "max_txs_per_sender": 128
+  },
+  "issuance": {
+    "enabled": true,
+    "block_reward": 5000,
+    "reward_asset": "USDR",
+    "coinbase_to": "miner:local"
+  },
+  "p2p": {
+    "enabled": true,
+    "bind": "0.0.0.0",
+    "port": 18444,
+    "allowlist": []
+  },
+  "gossip": {
+    "enabled": true,
+    "peers": [],
+    "timeout_seconds": 3,
+    "max_hops": 1
+  },
+  "state": {
+    "snapshot_interval": 200,
+    "snapshot_dir": "runtime/snapshots",
+    "snapshot_format": "json"
+  },
+  "limits": {
+    "max_block_bytes": 1000000,
+    "max_block_txs": 5000,
+    "max_tx_outputs": 256
+  },
+  "validation": {
+    "validate_fork_state": true,
+    "max_replay_blocks": 2000
+  },
+  "pos": {
+    "validator_source": "registry"
+  },
+  "pow": {
+    "retarget_interval": 100,
+    "target_block_sec": 5,
+    "max_future_drift_sec": 60
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "rpc": {
+    "bind": "127.0.0.1",
+    "port": 9101
+  },
+  "db": {
+    "path": "runtime/services/storage-daemon/db/platform.db",
+    "mode": "sqlite",
+    "key_ref": "keyvault:platform_db_sqlcipher_key"
+  }
+}

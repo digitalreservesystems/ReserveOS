@@ -1,0 +1,44 @@
+{
+  "gateway": {
+    "node": {
+      "role": "gateway",
+      "read_only": false,
+      "allow_public_submit": true
+    }
+  },
+  "validator": {
+    "node": {
+      "role": "validator",
+      "read_only": false,
+      "allow_public_submit": false
+    }
+  },
+  "archive": {
+    "node": {
+      "role": "archive",
+      "read_only": false,
+      "allow_public_submit": false
+    }
+  },
+  "observer": {
+    "node": {
+      "role": "observer",
+      "read_only": true,
+      "allow_public_submit": false
+    }
+  },
+  "miner": {
+    "node": {
+      "role": "miner",
+      "read_only": false,
+      "allow_public_submit": false
+    }
+  },
+  "developer": {
+    "node": {
+      "role": "developer",
+      "read_only": false,
+      "allow_public_submit": true
+    }
+  }
+}
